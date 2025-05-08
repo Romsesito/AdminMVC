@@ -2,7 +2,8 @@
 
 Esta API REST le permite al usuario controlar sus clientes y usuarios asignándoles el rol de cliente o de creativo para ofrecer un sistema que le permita recibir comisiones a una empresa.
 
-## Enlace en Youtube
+## Enlace en Youtube 
+[LINK AL VIDEO DE YOUTUBE](https://www.youtube.com/watch?v=xjLuToDD7ic)
 
 ## APIs
 
