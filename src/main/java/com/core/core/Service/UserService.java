@@ -63,4 +63,19 @@ public class UserService {
         return userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found with ID: " + userId));
     }
+
+    public User removeRoleFromUser(Long userId, ERole role) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with ID: " + userId));
+
+        Role roleToRemove = roleRepository.findByName(role)
+                .orElseThrow(() -> new RuntimeException("Role not found: " + role));
+
+        if (!user.getRoles().contains(roleToRemove)) {
+            throw new RuntimeException("User does not have the role: " + role);
+        }
+
+        user.getRoles().remove(roleToRemove);
+        return userRepository.save(user);
+    }
 }
